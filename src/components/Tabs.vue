@@ -8,7 +8,8 @@
     {{tab}} 
 </span>
 
-    <h1>Product review</h1>
+   <div v-show="selectedTab === 'Reviews'">
+        <h1>Product review</h1>
         <p v-if="!reviews.length">There is no review</p>
 
     <ul v-for="(review,index) in reviews" :key="index">
@@ -16,6 +17,11 @@
         <li>{{review.description}}</li>
         <li>{{review.reviewRating}}</li>
     </ul>
+   </div>
+
+    <div v-show="selectedTab === 'Make a Review'">
+        <Review/>
+    </div>
 </div>
 </template>
 
@@ -25,8 +31,8 @@ import Review from './Review.vue'
 export default {
     props:{
         reviews:{
-            typeof:'Array',
-        }
+            type:Array
+              }
     },
     name:"Tabs",
     components:{
@@ -34,8 +40,8 @@ export default {
     },
      data(){
         return {
-            tabs:['Review','Make a Review'],
-            selectedTab:'Review'
+            tabs:['Reviews','Make a Review'],
+            selectedTab:'Reviews'
         }
     },
 }

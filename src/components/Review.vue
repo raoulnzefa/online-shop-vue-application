@@ -28,6 +28,8 @@
 </template>
 
 <script>
+import {EventBus} from './EventBus'
+
 export default{
     name:"Review",
     data(){
@@ -45,9 +47,9 @@ export default{
         description : this.description,
         reviewRating  : this.reviewRating
       }
-      this.$emit('update-review',productReview)
-    //   this.reviews.push(productReview)
-      this.name= null,
+      console.log('sss',productReview)
+      EventBus.$emit('update-review',productReview)
+       this.name= null,
       this.description= null,
       this.reviewRating= null
       }

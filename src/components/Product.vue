@@ -39,7 +39,7 @@
     </div>
    
     <div class="form-style">
-  <Tabs :reviews = "reviews" @update-review ="updateReview"/>
+  <Tabs :reviews = "reviews"/>
   </div>
 
   </div>
@@ -48,8 +48,10 @@
 
 <script>
 import Tabs from './Tabs.vue'
+import { EventBus }  from './EventBus'
 
 export default{
+ 
   components:{
     Tabs
   },
@@ -87,9 +89,7 @@ export default{
     updateProduct(index){
         this.selectedVarient = index
     },
-    updateReview(productReview){
-      this.reviews.push(productReview)
-    }
+   
   },
   
   computed:{
@@ -103,6 +103,12 @@ export default{
           return this.variants[this.selectedVarient].variantQuantity
       }
 
+  },
+  mounted(){
+    EventBus.$on('update-review', productReview=>{
+      this.reviews.push(productReview)
+    }
+    )
   }
 }
 </script>
