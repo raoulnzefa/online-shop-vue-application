@@ -1,9 +1,10 @@
 <template>
-  <div id="app" class="nav-bar">
+<div>   
     <div class="cart">
       <p>Cart({{ count.length }})</p>
     </div>
-    <Product @add-to-cart="UpdateCart" @remove-from-cart="removeFromCart" />
+    <Product @add-to-cart="UpdateCart" @remove-from-cart="removeFromCart" /> 
+    <!-- UpdateCard - Listerner -->
   </div>
 </template>
 
@@ -33,12 +34,6 @@ export default {
 </script>
 
 <style scoped>
-.nav-bar {
-  background: linear-gradient(-90deg, #84cf6a, #16c0b0);
-  height: 60px;
-  margin-bottom: 15px;
-}
-
 .cart {
   margin-right: 25px;
   margin-top: 80px;

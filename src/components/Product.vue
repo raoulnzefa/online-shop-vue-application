@@ -34,8 +34,8 @@
       v-on:click="removeFromCard"
       :disabled="!inStock"
       :class="{disabledButton:!inStock}"
-      :style="{width:'auto' }">
-      Remove From Card</button>
+       >
+      Remove</button>
     </div>
    
     <div class="form-style">
@@ -105,11 +105,11 @@ export default{
 
   },
   mounted(){
-    EventBus.$on('update-review', productReview=>{
+    EventBus.$on('update-review', productReview=>{ ////receive an event called update review and pass productReview as a argument - receive data
       this.reviews.push(productReview)
     }
     )
-  }
+  },
 }
 </script>
 

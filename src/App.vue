@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <MyStore/>
+    <NavBar/>
    </div>
 </template>
 
 <script>
 
-import MyStore from './components/MyStore.vue'
+import NavBar from './components/NavBar.vue'
 
 export default {
   name: 'App',
   components: {
-    MyStore,
+    NavBar,
   }
 }
 </script>
