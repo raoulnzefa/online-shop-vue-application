@@ -3,7 +3,7 @@
     <NavBar/>
    </div>
 </template>
-
+//comented
 <script>
 
 import NavBar from './components/NavBar.vue'
