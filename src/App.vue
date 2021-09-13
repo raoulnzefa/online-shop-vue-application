@@ -3,7 +3,7 @@
     <MyStore/>
    </div>
 </template>
-
+//comented
 <script>
 
 import MyStore from './components/MyStore.vue'
